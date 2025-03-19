@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fastapi-app
 spec:
-  replicas: 15
+  replicas: 3
   selector:
     matchLabels:
       app: fastapi-app
@@ -19,8 +19,8 @@ spec:
         - containerPort: 80
         resources:
           requests:
-            cpu: "1"
-            memory: "500Mi"
+            cpu: "6"
+            memory: "4000Mi"
           limits:
-            cpu: "1"
-            memory: "500Mi"
+            cpu: "6"
+            memory: "4000Mi"
