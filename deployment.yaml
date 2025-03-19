@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: fastapi-app
-        image: crytek236/fastapi-app:latest
+        image: crytek236/fastapi-app:1.0
         ports:
         - containerPort: 80
         resources:
