@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: fastapi-app-service
 spec:
+  type: NodePort
   selector:
     app: fastapi-app
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: LoadBalancer
+      nodePort: 30001
