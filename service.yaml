@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: fastapi-app
 spec:
+  type: NodePort  # Указываем тип NodePort
   selector:
     app: fastapi-app
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: LoadBalancer
+      port: 80       # Порт сервиса внутри кластера
+      targetPort: 80 # Порт контейнера
+      nodePort: 30001 # (Опционально) Порт на узле (диапазон 30000-32767)

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fastapi-app
 spec:
-  replicas: 20  # Количество подов
+  replicas: 3
   selector:
     matchLabels:
       app: fastapi-app
@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
       - name: fastapi-app
-        image: crytek236/fastapi-app:latest
+        image: crytek236/fastapi-app:latest  # Используйте ваш образ из Docker Hub
         ports:
         - containerPort: 80
         resources:
           requests:
-            cpu: "1"  # 1 поток CPU
-            memory: "500Mi"  # 500 МБ оперативной памяти
+            cpu: "1"
+            memory: "500Mi"
           limits:
-            cpu: "1"  # Ограничение: 1 поток CPU
-            memory: "500Mi"  # Ограничение: 500 МБ оперативной памяти
+            cpu: "1"
+            memory: "500Mi"
